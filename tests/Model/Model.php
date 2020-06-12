@@ -6,10 +6,11 @@ namespace webignition\ObjectReflector\Tests\Model;
 
 class Model
 {
-    private string $property = '';
+    private string $privatePropertyWithGetter = '';
+    private string $privatePropertyWithoutGetter = 'no getter';
 
-    public function getProperty(): string
+    public function getPrivatePropertyWithGetter(): string
     {
-        return $this->property;
+        return $this->privatePropertyWithGetter;
     }
 }

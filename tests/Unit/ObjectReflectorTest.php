@@ -12,10 +12,16 @@ class ObjectReflectorTest extends \PHPUnit\Framework\TestCase
     public function testSetProperty()
     {
         $model = new Model();
-        $this->assertSame('', $model->getProperty());
+        $this->assertSame('', $model->getPrivatePropertyWithGetter());
 
-        ObjectReflector::setProperty($model, Model::class, 'property', 'content');
+        ObjectReflector::setProperty($model, Model::class, 'privatePropertyWithGetter', 'content');
 
-        $this->assertSame('content', $model->getProperty());
+        $this->assertSame('content', $model->getPrivatePropertyWithGetter());
+    }
+
+    public function testGetProperty()
+    {
+        $model = new Model();
+        $this->assertSame('no getter', ObjectReflector::getProperty($model, 'privatePropertyWithoutGetter'));
     }
 }
