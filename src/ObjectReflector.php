@@ -30,20 +30,25 @@ class ObjectReflector
     /**
      * @param object $object
      * @param string $propertyName
+     * @param class-string<T>|string|null $objectClass
      *
      * @return mixed
      */
-    public static function getProperty(object $object, string $propertyName)
+    public static function getProperty(object $object, string $propertyName, ?string $objectClass = null)
     {
         $value = null;
 
-        try {
-            $reflector = new \ReflectionObject($object);
-            $property = $reflector->getProperty($propertyName);
-            $property->setAccessible(true);
+        $objectClass = $objectClass ?? get_class($object);
 
-            $value =  $property->getValue($object);
-        } catch (\ReflectionException $exception) {
+        if (class_exists($objectClass)) {
+            try {
+                $reflector = new \ReflectionClass($objectClass);
+                $property = $reflector->getProperty($propertyName);
+                $property->setAccessible(true);
+
+                $value =  $property->getValue($object);
+            } catch (\ReflectionException $exception) {
+            }
         }
 
         return $value;
