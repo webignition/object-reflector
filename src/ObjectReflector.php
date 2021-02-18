@@ -28,6 +28,8 @@ class ObjectReflector
     }
 
     /**
+     * @template T
+     *
      * @param object $object
      * @param string $propertyName
      * @param class-string<T>|string|null $objectClass
