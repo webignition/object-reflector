@@ -46,7 +46,7 @@ class ObjectReflector
                 $property = $reflector->getProperty($propertyName);
                 $property->setAccessible(true);
 
-                $value =  $property->getValue($object);
+                $value = $property->getValue($object);
             } catch (\ReflectionException $exception) {
             }
         }
