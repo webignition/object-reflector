@@ -8,13 +8,12 @@ class ObjectReflector
 {
     /**
      * @param class-string $objectClass
-     * @param mixed        $propertyValue
      */
     public static function setProperty(
         object $object,
         string $objectClass,
         string $propertyName,
-        $propertyValue
+        mixed $propertyValue
     ): void {
         try {
             $reflector = new \ReflectionClass($objectClass);
