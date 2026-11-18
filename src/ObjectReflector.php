@@ -25,10 +25,8 @@ class ObjectReflector
 
     /**
      * @param null|class-string|string $objectClass
-     *
-     * @return mixed
      */
-    public static function getProperty(object $object, string $propertyName, ?string $objectClass = null)
+    public static function getProperty(object $object, string $propertyName, ?string $objectClass = null): mixed
     {
         $value = null;
 
