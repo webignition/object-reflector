@@ -5,10 +5,8 @@ namespace webignition\ObjectReflector;
 class ObjectReflector
 {
     /**
-     * @template T
-     *
      * @param object $object
-     * @param class-string<T> $objectClass
+     * @param class-string $objectClass
      * @param string $propertyName
      * @param mixed $propertyValue
      */
@@ -28,11 +26,9 @@ class ObjectReflector
     }
 
     /**
-     * @template T
-     *
      * @param object $object
      * @param string $propertyName
-     * @param class-string<T>|string|null $objectClass
+     * @param class-string|string|null $objectClass
      *
      * @return mixed
      */

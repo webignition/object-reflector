@@ -13,4 +13,9 @@ class Model
     {
         return $this->privatePropertyWithGetter;
     }
+
+    public function getPrivatePropertyWithoutGetter(): string
+    {
+        return $this->privatePropertyWithoutGetter;
+    }
 }
