@@ -1,14 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace webignition\ObjectReflector;
 
 class ObjectReflector
 {
     /**
-     * @param object $object
      * @param class-string $objectClass
-     * @param string $propertyName
-     * @param mixed $propertyValue
+     * @param mixed        $propertyValue
      */
     public static function setProperty(
         object $object,
@@ -26,9 +26,7 @@ class ObjectReflector
     }
 
     /**
-     * @param object $object
-     * @param string $propertyName
-     * @param class-string|string|null $objectClass
+     * @param null|class-string|string $objectClass
      *
      * @return mixed
      */

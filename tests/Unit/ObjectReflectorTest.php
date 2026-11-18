@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace webignition\ObjectReflector\Tests\Unit;
 
+use PHPUnit\Framework\TestCase;
 use webignition\ObjectReflector\ObjectReflector;
 use webignition\ObjectReflector\Tests\Model\Model;
 use webignition\ObjectReflector\Tests\Model\SpecificModel;
 
-class ObjectReflectorTest extends \PHPUnit\Framework\TestCase
+class ObjectReflectorTest extends TestCase
 {
     public function testSetProperty(): void
     {
